@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="./style.css">
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css'
+      integrity='sha512-KOWhIs2d8WrPgR4lTaFgxI35LLOp5PRki/DxQvb7mlP29YZ5iJ5v8tiLWF7JLk5nDBlgPP1gHzw96cZ77oD7zQ=='
+      crossorigin='anonymous' />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"
+      integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+   <div class="popup">
+      <div class="exit"><i id="exit" class="fa-solid fa-x" style="color: #fff;"></i></div>
+      <div class="info">
+
+      </div>
+   </div>
+
+   <div class="wrap">
+
+
+      <div class="list">
+         <div class="filters">
+
+            <div class="burger-icon" id="burgerIcon">
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+
+            <div class="filters-container" id="filtersContainer">
+               <!-- Your filter options here -->
+               <select id="speciesFilter">
+                  <option id="filter" value="">Species</option>
+                  <option id="filter" value="Human">Human</option>
+                  <option id="filter" value="Alien">Alien</option>
+               </select>
+
+               <select id="statusFilter">
+                  <option value="">Status</option>
+                  <option value="Alive">Alive</option>
+                  <option value="Dead">Dead</option>
+                  <option value="unknown">Unknown</option>
+               </select>
+
+               <select id="genderFilter">
+                  <option value="">All</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Genderless">Genderless</option>
+                  <option value="unknown">Unknown</option>
+               </select>
+
+            </div>
+
+            
+
+         </div>
+         <div class="charecters">
+
+         </div>
+         <div class="block-nav">
+            <button id="prev"><i class="fa-solid fa-angle-left" style="color: #fff;"></i></button>
+            <span id="currentPage"></span>
+            <button id="next"><i class="fa-solid fa-angle-right" style="color: #fff;"></i></button>
+         </div>
+
+      </div>
+
+
+      <div class="listep">
+         <div class="filter">
+            <input type="text" id="searchInput" placeholder="Name">
+            <button id="searchButton">Search</button>
+         </div>
+         <div class="episodes">
+
+         </div>
+         <div class="block-nav">
+            <button id="prevep"><i class="fa-solid fa-angle-left" style="color: #fff;"></i></button>
+            <span id="currentPageep"></span>
+            <button id="nextep"><i class="fa-solid fa-angle-right" style="color: #fff;"></i></button>
+         </div>
+
+      </div>
+
+      <div class="listloc">
+         <div class="location" id="locationn">
+
+         </div>
+         <div class="block-nav">
+            <button id="prevloc"><i class="fa-solid fa-angle-left" style="color: #fff;"></i></button>
+            <span id="currentPageloc"></span>
+            <button id="nextloc"><i class="fa-solid fa-angle-right" style="color: #fff;"></i></button>
+         </div>
+
+      </div>
+
+
+      <div class="listwatch">
+         <div class="watchlist">
+            <div class="filter">
+               <input type="text" id="searchWatch" placeholder="Episode">
+               <button id="watchbtn">Search</button>
+
+            </div>
+            <div class="watchlistcontainer"></div>
+
+         </div>
+      </div>
+
+
+      <div class="menu">
+         <div class="container">
+            <div class="home">
+               <i class="fa-solid fa-house" style="color: #ffffff;"></i>
+               <p>Home</p>
+            </div>
+            <div class="characters">
+               <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+               <p>Characters</p>
+            </div>
+            <div class="episodess">
+               <i class="fa-solid fa-tv" style="color: #ffffff;"></i>
+               <p>Episodes</p>
+            </div>
+            <div class="locations">
+               <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
+               <p>Locations</p>
+            </div>
+            <div class="watchlist">
+               <i class="fa-solid fa-star" style="color: #ffffff;"></i>
+               <p>Watchlist</p>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <script src="./main.js"></script>
+
+</body>
+
+</html>

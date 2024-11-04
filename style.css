@@ -1,0 +1,659 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/*Characters*/
+
+.wrap {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: black;
+}
+
+.wrap .list {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100vh;
+   overflow-y: scroll;
+   background-color: rgb(22, 22, 22);
+   text-align: center;
+}
+
+.wrap .list .filters {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 50px;
+   margin: 40px 0 10px 0;
+}
+
+.wrap .list .filters #speciesFilter,
+.wrap .list .filters #statusFilter,
+.wrap .list .filters #genderFilter {
+   text-align: center;
+   width: 100px;
+   height: 40px;
+   font-size: 20px;
+   border: none;
+   border-radius: 10px;
+   color: aqua;
+   background-color: rgb(32, 32, 32);
+   box-shadow: 0px 0px 8px 8px black;
+   margin-right: 20px;
+}
+
+.wrap .list .block-nav {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   margin-bottom: 40px;
+}
+
+.wrap .list .block-nav #next,
+.wrap .list .block-nav #prev {
+   width: 40px;
+   height: 30px;
+   background-color: black;
+   border-radius: 10px;
+   border: none;
+}
+
+.wrap .list .block-nav #currentPage {
+   width: 30px;
+   height: 30px;
+   background-color: black;
+   border-radius: 10px;
+   color: #fff;
+   border: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.wrap .list .charecters {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   flex-wrap: wrap;
+   background-color: rgb(22, 22, 22);
+   gap: 40px;
+   padding: 50px 0 50px 0;
+}
+
+.wrap .list .charecters .cart {
+   text-align: center;
+   padding: 20px 0px 20px 0px;
+   width: 250px;
+   height: 400px;
+   background-color: bisque;
+   border-radius: 10px;
+   color: #fff;
+   background-color: rgb(32, 32, 32);
+   box-shadow: 0px 0px 8px 8px black;
+}
+
+.wrap .list .charecters .cart .image img {
+   width: 210px;
+   height: 210px;
+   margin-bottom: 15px;
+   border-radius: 10px;
+}
+
+.wrap .list .charecters .cart .name {
+   text-transform: uppercase;
+   font-weight: 600;
+}
+
+.wrap .list .charecters .cart button {
+   width: 210px;
+   height: 40px;
+   text-transform: uppercase;
+   font-weight: 600;
+   color: rgb(32, 32, 32);
+   background-color: rgba(51, 255, 0, 0.829);
+   box-shadow: 0px 0px 8px 8px black;
+   border: none;
+   border-radius: 10px;
+   margin-top: 15px;
+}
+
+/*Popup*/
+
+.popup {
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   top: 50%;
+   left: 50%;
+   margin-top: -250px;
+   margin-left: -400px;
+   position: fixed;
+   width: 800px;
+   height: 450px;
+   background-color: rgb(32, 32, 32);
+   box-shadow: 0px 0px 8px 8px rgb(255, 255, 255);
+   color: rgba(51, 255, 0, 0.829);
+   border-radius: 10px;
+   z-index: 1;
+}
+
+.popup .exit {
+   width: 100%;
+   padding: 20px;
+   display: flex;
+   justify-content: end;
+   color: #fff;
+}
+
+.popup .info {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.popup .info .image img {
+   border-radius: 10px;
+}
+
+.popup .info .item {
+   font-size: 20px;
+   padding: 20px;
+   line-height: 1.7;
+}
+
+/*Episodes*/
+
+.wrap .listep {
+   display: none;
+   flex-direction: column;
+   width: 100%;
+   height: 100vh;
+   overflow-y: scroll;
+   background-color: rgb(22, 22, 22);
+   text-align: center;
+}
+
+.wrap .listep .episodes {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   background-color: rgb(22, 22, 22);
+   padding: 50px 60px 50px 80px;
+}
+
+.wrap .listep .episodes .cart {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: start;
+   padding: 10px 0px 10px 10px;
+   width: 250px;
+   height: 110px;
+   color: #fff;
+   border: 1px solid #fff;
+   line-height: 1.8;
+}
+
+.wrap .listep .episodes .cart .name {
+   font-weight: 600;
+}
+
+.wrap .listep .episodes .cart .airdate {
+   color: #afafaf;
+}
+
+.wrap .listep .block-nav {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   margin-bottom: 40px;
+}
+
+.wrap .listep .block-nav #nextep,
+.wrap .listep .block-nav #prevep {
+   width: 40px;
+   height: 30px;
+   background-color: black;
+   border-radius: 10px;
+   border: none;
+}
+
+.wrap .listep .block-nav #currentPageep {
+   width: 30px;
+   height: 30px;
+   background-color: black;
+   border-radius: 10px;
+   color: #fff;
+   border: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.wrap .listep .filter {
+   margin: 20px 0 0px 0;
+}
+
+.wrap .listep .filter input {
+   width: 200px;
+   height: 40px;
+   border: none;
+   border-radius: 10px;
+   margin-right: 10px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(32, 32, 32);
+   box-shadow: 0px 0px 8px 8px black;
+   font-size: 14px;
+   padding-left: 10px;
+}
+
+.wrap .listep .filter button {
+   width: 100px;
+   height: 40px;
+   text-transform: uppercase;
+   font-weight: 600;
+   color: rgb(32, 32, 32);
+   background-color: rgba(51, 255, 0, 0.829);
+   box-shadow: 0px 0px 8px 8px black;
+   border: none;
+   border-radius: 10px;
+}
+
+/*Location*/
+
+.wrap .listloc {
+   display: none;
+   flex-direction: column;
+   width: 100%;
+   height: 100vh;
+   overflow-y: scroll;
+   background-color: rgb(22, 22, 22);
+   text-align: center;
+}
+
+.wrap .listloc .location {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   background-color: rgb(22, 22, 22);
+   padding: 50px 60px 50px 80px;
+}
+
+.wrap .listloc .location .cart {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: start;
+   padding: 10px 0px 10px 10px;
+   width: 250px;
+   height: 110px;
+   color: #fff;
+   border: 1px solid #fff;
+   line-height: 1.8;
+}
+
+.wrap .listloc .location .cart .name {
+   font-weight: 600;
+}
+
+.wrap .listloc .location .cart .type,
+.wrap .listloc .location .cart .type .dimension {
+   color: #afafaf;
+}
+
+.wrap .listloc .block-nav {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   margin-bottom: 40px;
+}
+
+.wrap .listloc .block-nav #nextloc,
+.wrap .listloc .block-nav #prevloc {
+   width: 40px;
+   height: 30px;
+   background-color: black;
+   border-radius: 10px;
+   border: none;
+}
+
+.wrap .listloc .block-nav #currentPageloc {
+   width: 30px;
+   height: 30px;
+   background-color: black;
+   border-radius: 10px;
+   color: #fff;
+   border: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+/*Watchlist*/
+
+.wrap .listwatch {
+   display: none;
+   width: 100%;
+   height: 100vh;
+   align-items: start;
+   justify-content: center;
+   color: #fff;
+}
+.wrap .listwatch .filter {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 50px 0 50px 0;
+}
+.wrap .listwatch .filter input {
+   width: 600px;
+   height: 40px;
+   border: none;
+   border-radius: 10px;
+   margin-right: 10px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(32, 32, 32);
+   box-shadow: 0px 0px 8px 8px black;
+   font-size: 14px;
+   padding-left: 10px;
+}
+
+.wrap .listwatch .filter button {
+   width: 100px;
+   height: 40px;
+   text-transform: uppercase;
+   font-weight: 600;
+   color: rgb(32, 32, 32);
+   background-color: rgba(51, 255, 0, 0.829);
+   box-shadow: 0px 0px 8px 8px black;
+   border: none;
+   border-radius: 10px;
+}
+
+.watchlistcontainer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.watchlistcontainer .cart {
+   width: 100%;
+   height: 70px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   color: #fff;
+   background-color: rgb(32, 32, 32);
+   border-radius: 10px;
+   margin-bottom: 10px;
+   padding: 0 20px 0 20px;
+}
+.watchlistcontainer .cart .inform {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+
+
+/*Menu fotter*/
+
+.wrap .menu {
+   height: 100px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.wrap .menu .container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   color: #cecece;
+   width: 500px;
+   text-align: center;
+}
+
+.wrap .menu .container .home i,
+.wrap .menu .container .characters i,
+.wrap .menu .container .episodess i,
+.wrap .menu .container .locations i,
+.wrap .menu .container .watchlist i {
+   text-align: center;
+   margin-bottom: 5px;
+}
+
+
+/*Adaptive*/
+
+/* Адаптив до 768px */
+
+@media (max-width: 768px) {
+   .popup {
+      width: 300px;
+   }
+   .popup .info{
+      display: block;
+   }
+   .popup .info .image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .popup .info .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+   .wrap {
+      padding: 0 10px;
+   }
+
+   
+   .wrap .list, .wrap .listep, .wrap .listloc, .wrap .listwatch {
+      height: calc(100vh - 60px);
+      padding: 0 10px;
+   }
+
+   
+   .wrap .list .filters, 
+   .wrap .listep .filter, 
+   .wrap .listwatch .filter {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0;
+   }
+   
+   .wrap .list .filters #speciesFilter,
+   .wrap .list .filters #statusFilter,
+   .wrap .list .filters #genderFilter {
+      width: 80px;
+      height: 35px;
+      font-size: 16px;
+   }
+
+   
+   .wrap .list .charecters,
+   .wrap .listep .episodes,
+   .wrap .listloc .location,
+   .watchlistcontainer {
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 0;
+   }
+
+   
+   .wrap .list .charecters .cart, 
+   .wrap .listep .episodes .cart, 
+   .wrap .listloc .location .cart {
+      width: 180px;
+      height: auto;
+      padding: 15px;
+      font-size: 14px;
+   }
+   
+   
+   .watchlistcontainer .cart {
+      height: auto;
+      padding: 10px;
+   }
+
+   
+   .wrap .list .charecters .cart .image img {
+      width: 150px;
+      height: 150px;
+   }
+
+   
+   .wrap .list .block-nav button,
+   .wrap .listep .block-nav button,
+   .wrap .listloc .block-nav button {
+      width: 35px;
+      height: 35px;
+   }
+
+   
+   .popup {
+      width: 90%;
+      height: auto;
+      top: 10%;
+      left: 5%;
+      margin: 0;
+   }
+
+   
+   .wrap .menu {
+      height: 400px;
+   }
+   .wrap .menu .container {
+      width: 80%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px;
+   }
+
+   .wrap .menu .container div {
+      width: 100px;
+      font-size: 20px;
+      margin-bottom: 20px;
+   }
+}
+
+/* Адаптив до 480px */
+
+@media (max-width: 480px) {
+   .wrap {
+      padding: 0 5px;
+   }
+   .wrap .list .filter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   .wrap .listwatch {
+      height: 100vh;
+   } 
+   .wrap .listwatch .watchlist .filter {
+      width: 320px;
+   }
+   .wrap .listwatch .watchlist .filter input {
+      width: 200px;
+   }
+   .wrap .listwatch .watchlist .filter #watchbtn {
+      width: 100px;
+   }
+   .wrap .listwatch .watchlist .watchlistcontainer {
+      gap: 0px;
+   }
+
+
+   .wrap .list .filters #speciesFilter,
+   .wrap .list .filters #statusFilter,
+   .wrap .list .filters #genderFilter {
+      width: 70px;
+      height: 30px;
+      font-size: 14px;
+      margin-right: 10px;
+   }
+   .wrap .list .charecters .cart button{
+      width: 150px;
+   }
+   
+   .wrap .list .charecters .cart, 
+   .wrap .listep .episodes .cart, 
+   .wrap .listloc .location .cart {
+      font-size: 12px;
+   }
+
+   
+   .wrap .list .charecters .cart .image img {
+      width: 120px;
+      height: 120px;
+   }
+
+   
+   .popup {
+      width: 100%;
+      left: 0;
+      padding: 10px;
+      height: auto;
+   }
+   
+   /* Burger menu icon */
+   
+.burger-icon {
+   width: 30px;
+   height: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   cursor: pointer;
+}
+
+.burger-icon span {
+   display: block;
+   width: 100%;
+   height: 2px;
+   background-color: #fff;
+   transition: 0.3s;
+}
+
+
+.burger-icon.active span:nth-child(1) {
+   transform: rotate(45deg) translateY(14px);
+}
+
+.burger-icon.active span:nth-child(2) {
+   opacity: 0;
+}
+
+.burger-icon.active span:nth-child(3) {
+   transform: rotate(-45deg) translateY(-14px);
+}
+
+
+.filters-container {
+   display: none;  
+}
+
+.filters-container.active {
+   display: block; 
+}
+
+}
+
+
